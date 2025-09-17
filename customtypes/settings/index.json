@@ -6,6 +6,22 @@
   "status": true,
   "json": {
     "Main": {
+      "sbdc_logo": {
+        "type": "Image",
+        "config": {
+          "label": "SBDC Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "nupura_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Nupura Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "banner": {
         "type": "Text",
         "config": {

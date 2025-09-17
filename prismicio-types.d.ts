@@ -140,6 +140,28 @@ export type HomeDocument<Lang extends string = string> =
  */
 interface SettingsDocumentData {
   /**
+   * SBDC Logo field in *Site Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.sbdc_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  sbdc_logo: prismic.ImageField<never>;
+
+  /**
+   * Nupura Logo field in *Site Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.nupura_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  nupura_logo: prismic.ImageField<never>;
+
+  /**
    * Banner Text field in *Site Settings*
    *
    * - **Field Type**: Text
