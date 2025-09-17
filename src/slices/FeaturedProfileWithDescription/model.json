@@ -1,0 +1,39 @@
+{
+  "type": "SharedSlice",
+  "id": "featured_profile_with_description",
+  "name": "FeaturedProfileWithDescription",
+  "variations": [
+    {
+      "id": "profile_right_aligned_text",
+      "name": "Default",
+      "description": "Displays the profile image on the left and right-aligned text content featuring a heading and detailed description.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "constraint": {},
+            "label": "Profile Image"
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Title"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Description"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "type": "SharedSlice",
+  "id": "timeline_milestones",
+  "name": "Timeline",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Displays milestones vertically, each with a year, headline, image, and accompanying description.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "timeline": {
+          "type": "Group",
+          "config": {
+            "label": "Timeline Items",
+            "repeat": true,
+            "fields": {
+              "year": {
+                "type": "Text",
+                "config": {
+                  "label": "Year"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,strong,em,hyperlink",
+                  "label": "Description"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

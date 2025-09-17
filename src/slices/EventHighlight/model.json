@@ -1,0 +1,86 @@
+{
+  "type": "SharedSlice",
+  "id": "event_details_highlight",
+  "name": "EventHighlight",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default variation with image on the left and event details (title, subtitle, metadata, CTA) on the right.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Section Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image"
+          }
+        },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading3",
+            "label": "Subtitle"
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Event Title"
+          }
+        },
+        "date": {
+          "type": "Date",
+          "config": {
+            "label": "Date",
+            "placeholder": ""
+          }
+        },
+        "venue": {
+          "type": "Link",
+          "config": {
+            "label": "Venue",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
+        "entry_time": {
+          "type": "Text",
+          "config": {
+            "label": "Entry Time"
+          }
+        },
+        "show_time": {
+          "type": "Text",
+          "config": {
+            "label": "Show Time"
+          }
+        },
+        "cta_button": {
+          "type": "Link",
+          "config": {
+            "label": "CTA Button",
+            "allowText": true,
+            "repeat": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
