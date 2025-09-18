@@ -9,6 +9,14 @@ import {
   SelectValue,
 } from "./ui/select"
 import { usePathname, useRouter } from "next/navigation"
+import {
+  localeMapping,
+  getUrlSegment,
+  getDisplayName,
+  type PrismicLocale,
+  getCurrentLocaleFromPathname,
+  buildLocaleUrl,
+} from "@/lib/internationalization"
 
 type Props = {
   locales: {
@@ -22,36 +30,34 @@ export default function LanguageSwitcher({ locales }: Props) {
   const router = useRouter()
 
   const currentLang = useMemo(() => {
-    if (!pathname) return locales[0]?.lang || ""
-    const first = pathname.split("/").filter(Boolean)[0]
-    return locales.find((l) => l.lang === first)?.lang || locales[0]?.lang || ""
+    return getCurrentLocaleFromPathname(pathname, locales)
   }, [pathname, locales])
 
   function switchTo(lang: string) {
     if (!pathname) return
-    const segments = pathname.split("/")
-    // segments: ["", lang, ...rest] or ["", ...]
-    if (segments.length > 1) {
-      // replace first non-empty segment with new lang
-      const rest = segments.filter(Boolean).slice(1)
-      const newPath = `/${lang}${rest.length ? "/" + rest.join("/") : ""}`
-      router.push(newPath)
-    } else {
-      router.push(`/${lang}`)
-    }
+    const newPath = buildLocaleUrl(lang, pathname)
+    router.push(newPath)
   }
 
   return (
     <Select value={currentLang} onValueChange={switchTo}>
       <SelectTrigger>
-        <SelectValue placeholder={currentLang.toUpperCase()} />
+        <SelectValue
+          placeholder={
+            getDisplayName(currentLang as PrismicLocale) ||
+            currentLang.toUpperCase()
+          }
+        />
       </SelectTrigger>
       <SelectContent>
-        {locales.map(({ lang, lang_name }) => (
-          <SelectItem key={lang} value={lang}>
-            {lang_name}
-          </SelectItem>
-        ))}
+        {locales.map(({ lang, lang_name }) => {
+          const displayName = getDisplayName(lang as PrismicLocale) || lang_name
+          return (
+            <SelectItem key={lang} value={lang}>
+              {displayName}
+            </SelectItem>
+          )
+        })}
       </SelectContent>
     </Select>
   )
