@@ -1,5 +1,12 @@
 import { client } from "@/lib/prismic"
 import { PrismicNextImage } from "@prismicio/next"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select"
 
 export default async function Navbar() {
   const {
@@ -14,7 +21,18 @@ export default async function Navbar() {
           <div className="w-0.5 h-14 bg-light rounded-full" />
           <PrismicNextImage field={nupura_logo} className="w-24 h-8" />
         </div>
+
         <p className="font-medium">{banner}</p>
+
+        <Select value="en">
+          <SelectTrigger>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="en">EN</SelectItem>
+            <SelectItem value="es">ES</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
     </nav>
   )
