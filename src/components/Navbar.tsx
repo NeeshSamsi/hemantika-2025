@@ -1,17 +1,17 @@
 import { client } from "@/lib/prismic"
 import { PrismicNextImage } from "@prismicio/next"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select"
+import LanguageSwitcher from "./LanguageSwitcher"
 
 export default async function Navbar() {
   const {
     data: { sbdc_logo, nupura_logo, banner },
   } = await client.getSingle("settings")
+
+  const repository = await client.getRepository()
+  const locales = repository.languages.map((lang) => ({
+    lang: lang.id,
+    lang_name: lang.name,
+  }))
 
   return (
     <nav className="grid grid-cols-subgrid col-start-2 col-span-12 py-6">
@@ -24,15 +24,7 @@ export default async function Navbar() {
 
         <p className="font-medium">{banner}</p>
 
-        <Select value="en">
-          <SelectTrigger>
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="en">EN</SelectItem>
-            <SelectItem value="es">ES</SelectItem>
-          </SelectContent>
-        </Select>
+        <LanguageSwitcher locales={locales} />
       </div>
     </nav>
   )
