@@ -1,6 +1,10 @@
+@import url("https://use.typekit.net/eot4iwd.css");
 @import "tailwindcss";
 
 @theme {
+  --font-body: var(--font-work-sans), sans-serif;
+  --font-heading: "quiche-flare", serif;
+
   --color-dark: #1b4955;
   --color-light: #ccecf4;
   --color-brand: #3cd3ad;

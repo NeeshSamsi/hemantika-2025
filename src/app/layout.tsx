@@ -1,10 +1,11 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Work_Sans } from "next/font/google"
 import "./globals.css"
+import Navbar from "@/components/Navbar"
 
-const inter = Inter({
-  variable: "--font-inter",
+const workSans = Work_Sans({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-work-sans",
 })
 
 export default function RootLayout({
@@ -13,8 +14,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+    <html lang="en" className={`${workSans.variable}`}>
+      <body
+        className={`antialiased px-3 grid grid-cols-14 gap-x-6 bg-dark text-light font-body`}
+      >
+        <Navbar />
+        <main>{children}</main>
+        {/* <Footer /> */}
+      </body>
     </html>
   )
 }
