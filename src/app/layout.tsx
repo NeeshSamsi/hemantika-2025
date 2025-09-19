@@ -1,6 +1,7 @@
 import { Work_Sans } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
+import Section from "@/components/Section"
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -18,7 +19,7 @@ export default function RootLayout({
       <body className={`antialiased bg-dark text-light font-body`}>
         <div className="px-3 grid grid-cols-14 gap-x-6">
           <Navbar />
-          <main>{children}</main>
+          <Section as="main">{children}</Section>
           {/* <Footer /> */}
         </div>
       </body>

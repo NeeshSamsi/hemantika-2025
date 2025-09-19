@@ -19,7 +19,9 @@ export default async function Page({ params: { lang } }: Props) {
     .catch(() => notFound())
 
   return (
-    <>{/* <SliceZone slices={page.data.slices} components={components} /> */}</>
+    <>
+      <SliceZone slices={page.data.slices} components={components} />
+    </>
   )
 }
 

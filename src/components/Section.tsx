@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils"
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react"
 
 type SectionProps<TTag extends ElementType = "section"> = {
@@ -15,10 +16,13 @@ export default function Section<TTag extends ElementType = "section">(
 
   return (
     <Tag
-      className="grid grid-cols-subgrid col-start-2 col-span-12 py-6"
+      className={cn(
+        "grid grid-cols-subgrid col-start-2 col-span-12 py-6",
+        className
+      )}
       {...restProps}
     >
-      <div className={className}>{children}</div>
+      {children}
     </Tag>
   )
 }
