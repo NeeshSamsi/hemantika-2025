@@ -1,0 +1,24 @@
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react"
+
+type SectionProps<TTag extends ElementType = "section"> = {
+  as?: TTag
+  className?: string
+  children: ReactNode
+} & Omit<ComponentPropsWithoutRef<TTag>, "className" | "as" | "children">
+
+export default function Section<TTag extends ElementType = "section">(
+  props: SectionProps<TTag>
+) {
+  const { as, className, children, ...restProps } =
+    props as SectionProps<ElementType>
+  const Tag: ElementType = as ?? "section"
+
+  return (
+    <Tag
+      className="grid grid-cols-subgrid col-start-2 col-span-12 py-6"
+      {...restProps}
+    >
+      <div className={className}>{children}</div>
+    </Tag>
+  )
+}
