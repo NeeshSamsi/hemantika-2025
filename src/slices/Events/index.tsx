@@ -1,11 +1,11 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { FC } from "react"
+import { Content } from "@prismicio/client"
+import { SliceComponentProps } from "@prismicio/react"
 
 /**
  * Props for `Events`.
  */
-export type EventsProps = SliceComponentProps<Content.EventsSlice>;
+export type EventsProps = SliceComponentProps<Content.EventsSlice>
 
 /**
  * Component for "Events" Slices.
@@ -46,7 +46,7 @@ const Events: FC<EventsProps> = ({ slice }) => {
        * 📚 Documentation: https://prismic.io/docs/ai#code-with-prismics-mcp-server
        */}
     </section>
-  );
-};
+  )
+}
 
-export default Events;
+export default Events

@@ -1,12 +1,12 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { FC } from "react"
+import { Content } from "@prismicio/client"
+import { SliceComponentProps } from "@prismicio/react"
 
 /**
  * Props for `EventDetailsHighlight`.
  */
 export type EventDetailsHighlightProps =
-  SliceComponentProps<Content.EventDetailsHighlightSlice>;
+  SliceComponentProps<Content.EventDetailsHighlightSlice>
 
 /**
  * Component for "EventDetailsHighlight" Slices.
@@ -48,7 +48,7 @@ const EventDetailsHighlight: FC<EventDetailsHighlightProps> = ({ slice }) => {
        * 📚 Documentation: https://prismic.io/docs/ai#code-with-prismics-mcp-server
        */}
     </section>
-  );
-};
+  )
+}
 
-export default EventDetailsHighlight;
+export default EventDetailsHighlight

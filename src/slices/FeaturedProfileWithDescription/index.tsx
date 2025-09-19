@@ -1,12 +1,12 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { FC } from "react"
+import { Content } from "@prismicio/client"
+import { SliceComponentProps } from "@prismicio/react"
 
 /**
  * Props for `FeaturedProfileWithDescription`.
  */
 export type FeaturedProfileWithDescriptionProps =
-  SliceComponentProps<Content.FeaturedProfileWithDescriptionSlice>;
+  SliceComponentProps<Content.FeaturedProfileWithDescriptionSlice>
 
 /**
  * Component for "FeaturedProfileWithDescription" Slices.
@@ -50,7 +50,7 @@ const FeaturedProfileWithDescription: FC<
        * 📚 Documentation: https://prismic.io/docs/ai#code-with-prismics-mcp-server
        */}
     </section>
-  );
-};
+  )
+}
 
-export default FeaturedProfileWithDescription;
+export default FeaturedProfileWithDescription

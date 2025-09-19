@@ -1,12 +1,12 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { FC } from "react"
+import { Content } from "@prismicio/client"
+import { SliceComponentProps } from "@prismicio/react"
 
 /**
  * Props for `TimelineMilestones`.
  */
 export type TimelineMilestonesProps =
-  SliceComponentProps<Content.TimelineMilestonesSlice>;
+  SliceComponentProps<Content.TimelineMilestonesSlice>
 
 /**
  * Component for "TimelineMilestones" Slices.
@@ -48,7 +48,7 @@ const TimelineMilestones: FC<TimelineMilestonesProps> = ({ slice }) => {
        * 📚 Documentation: https://prismic.io/docs/ai#code-with-prismics-mcp-server
        */}
     </section>
-  );
-};
+  )
+}
 
-export default TimelineMilestones;
+export default TimelineMilestones
