@@ -8,10 +8,11 @@ import { components } from "@/slices"
 import { getPrismicLocale } from "@/lib/internationalization"
 
 type Props = {
-  params: { lang: string }
+  params: Promise<{ lang: string }>
 }
 
-export default async function Page({ params: { lang } }: Props) {
+export default async function Page({ params }: Props) {
+  const { lang } = await params
   const client = createClient()
   const prismicLocale = getPrismicLocale(lang) || lang
   const page = await client
@@ -25,9 +26,8 @@ export default async function Page({ params: { lang } }: Props) {
   )
 }
 
-export async function generateMetadata({
-  params: { lang },
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params
   const client = createClient()
   const prismicLocale = getPrismicLocale(lang) || lang
   const page = await client
