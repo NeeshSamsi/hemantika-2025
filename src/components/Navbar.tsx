@@ -1,8 +1,9 @@
 import { client } from "@/lib/prismic"
-import { PrismicNextImage } from "@prismicio/next"
-import LanguageSwitcher from "./LanguageSwitcher"
 import { getRepositoryLocalesSimple } from "@/lib/internationalization"
+
+import { PrismicNextImage } from "@prismicio/next"
 import Section from "./Section"
+import LanguageSwitcher from "./LanguageSwitcher"
 
 export default async function Navbar() {
   const {
@@ -12,15 +13,25 @@ export default async function Navbar() {
   const locales = await getRepositoryLocalesSimple(client)
 
   return (
-    <Section as="nav">
-      <div className="flex items-center justify-between col-span-full">
-        <div className="flex items-center gap-x-4">
-          <PrismicNextImage field={sbdc_logo} className="aspect-square w-12" />
-          <div className="w-0.5 h-14 bg-light rounded-full" />
-          <PrismicNextImage field={nupura_logo} className="w-24 h-8" />
+    <Section as="nav" className="relative gap-y-4">
+      <p className="col-span-full text-center text-sm font-medium sm:text-base md:hidden">
+        {banner}
+      </p>
+
+      <div className="col-span-full flex items-center justify-between gap-4">
+        <div className="flex items-center gap-2 lg:gap-4">
+          <PrismicNextImage
+            field={sbdc_logo}
+            className="aspect-square size-10 lg:size-12"
+          />
+          <div className="bg-light w-0.5 grow rounded-full lg:h-12" />
+          <PrismicNextImage
+            field={nupura_logo}
+            className="h-7 w-20 lg:h-8 lg:w-24"
+          />
         </div>
 
-        <p className="font-medium">{banner}</p>
+        <p className="hidden font-medium md:block">{banner}</p>
 
         <LanguageSwitcher locales={locales} />
       </div>
