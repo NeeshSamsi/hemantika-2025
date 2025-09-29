@@ -8,7 +8,7 @@ type SectionProps<TTag extends ElementType = "section"> = {
 } & Omit<ComponentPropsWithoutRef<TTag>, "className" | "as" | "children">
 
 export default function Section<TTag extends ElementType = "section">(
-  props: SectionProps<TTag>
+  props: SectionProps<TTag>,
 ) {
   const { as, className, children, ...restProps } =
     props as SectionProps<ElementType>
@@ -17,8 +17,8 @@ export default function Section<TTag extends ElementType = "section">(
   return (
     <Tag
       className={cn(
-        "grid grid-cols-subgrid col-start-2 col-span-12 py-6",
-        className
+        "col-span-12 col-start-2 grid grid-cols-subgrid",
+        className,
       )}
       {...restProps}
     >

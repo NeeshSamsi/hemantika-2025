@@ -13,7 +13,7 @@ export default async function Navbar() {
   const locales = await getRepositoryLocalesSimple(client)
 
   return (
-    <Section as="nav" className="relative gap-y-4">
+    <Section as="nav" className="relative gap-y-4 py-6">
       <p className="col-span-full text-center text-sm font-medium sm:text-base md:hidden">
         {banner}
       </p>
