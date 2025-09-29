@@ -1,52 +1,51 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { FC } from "react"
+import { asText, Content } from "@prismicio/client"
+import { SliceComponentProps } from "@prismicio/react"
+
+import { Button } from "@/components/ui/button"
+import { PrismicNextLink } from "@prismicio/next"
 
 /**
  * Props for `Hero`.
  */
-export type HeroProps = SliceComponentProps<Content.HeroSlice>;
+export type HeroProps = SliceComponentProps<Content.HeroSlice>
 
 /**
  * Component for "Hero" Slices.
  */
-const Hero: FC<HeroProps> = ({ slice }) => {
+const Hero: FC<HeroProps> = ({
+  slice: {
+    slice_type,
+    variation,
+    primary: { eyebrow, heading, description, ticket, workshops },
+  },
+}) => {
   return (
     <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
+      data-slice-type={slice_type}
+      data-slice-variation={variation}
+      className="col-span-full py-8"
     >
-      Placeholder component for hero (variation: {slice.variation}) slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use Prismic MCP with your code editor
-       *
-       * Get AI-powered help to build your slice components — based on your actual model.
-       *
-       * ▶️ Setup:
-       * 1. Add a new MCP Server in your code editor:
-       *
-       * {
-       *   "mcpServers": {
-       *     "Prismic MCP": {
-       *       "command": "npx",
-       *       "args": ["-y", "@prismicio/mcp-server@latest"]
-       *     }
-       *   }
-       * }
-       *
-       * 2. Select a model optimized for coding (e.g. Claude 3.7 Sonnet or similar)
-       *
-       * ✅ Then open your slice file and ask your code editor:
-       *    "Code this slice"
-       *
-       * Your code editor reads your slice model and helps you code faster ⚡
-       * 🎙️ Give your feedback: https://community.prismic.io/t/help-us-shape-the-future-of-slice-creation/19505
-       * 📚 Documentation: https://prismic.io/docs/ai#code-with-prismics-mcp-server
-       */}
-    </section>
-  );
-};
+      <div className="font-heading mb-6 text-center font-bold lg:mb-10">
+        <h1 className="mb-4 text-2xl lg:mb-8 lg:text-3xl">{eyebrow}</h1>
+        <h2 className="mx-auto mb-4 max-w-[15ch] text-4xl lg:mb-6 lg:text-6xl">
+          {asText(heading)}
+        </h2>
+        <p className="font-body mx-auto max-w-[45ch] text-center text-base font-normal lg:text-lg">
+          {description}
+        </p>
+      </div>
 
-export default Hero;
+      <div className="flex flex-wrap items-center justify-center gap-6">
+        <Button asChild variant="primary">
+          <PrismicNextLink field={ticket} />
+        </Button>
+        <Button asChild variant="outline">
+          <PrismicNextLink field={workshops} />
+        </Button>
+      </div>
+    </section>
+  )
+}
+
+export default Hero
