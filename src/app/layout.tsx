@@ -16,8 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${workSans.variable}`}>
-      <body className={`antialiased bg-dark text-light font-body`}>
-        <div className="px-3 grid grid-cols-14 gap-x-6">
+      <body
+        className={`bg-dark text-light font-body overflow-x-hidden antialiased`}
+      >
+        <div className="grid grid-cols-14 gap-x-6 px-3">
           <Navbar />
           <Section as="main">{children}</Section>
           {/* <Footer /> */}

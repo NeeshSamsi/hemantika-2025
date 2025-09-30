@@ -4,6 +4,9 @@ import { getRepositoryLocalesSimple } from "@/lib/internationalization"
 import { PrismicNextImage } from "@prismicio/next"
 import Section from "./Section"
 import LanguageSwitcher from "./LanguageSwitcher"
+import Image from "next/image"
+
+import bgAsset from "@/../public/bg-assets/nav.png"
 
 export default async function Navbar() {
   const {
@@ -35,6 +38,12 @@ export default async function Navbar() {
 
         <LanguageSwitcher locales={locales} />
       </div>
+
+      <Image
+        src={bgAsset}
+        alt=""
+        className="absolute -top-30 -right-32 -z-10 size-80 sm:-top-36 sm:-right-48 sm:size-96 lg:-top-44 lg:-right-64 lg:size-120 xl:-top-56 xl:-right-72 xl:size-150"
+      />
     </Section>
   )
 }

@@ -4,6 +4,9 @@ import { SliceComponentProps } from "@prismicio/react"
 
 import { Button } from "@/components/ui/button"
 import { PrismicNextLink } from "@prismicio/next"
+import Image from "next/image"
+
+import bgAsset from "@/../public/bg-assets/hero.png"
 
 /**
  * Props for `Hero`.
@@ -24,7 +27,7 @@ const Hero: FC<HeroProps> = ({
     <section
       data-slice-type={slice_type}
       data-slice-variation={variation}
-      className="col-span-full py-8"
+      className="relative col-span-full py-8"
     >
       <div className="font-heading mb-6 text-center font-bold lg:mb-10">
         <h1 className="mb-4 text-2xl lg:mb-8 lg:text-3xl">{eyebrow}</h1>
@@ -44,6 +47,12 @@ const Hero: FC<HeroProps> = ({
           <PrismicNextLink field={workshops} />
         </Button>
       </div>
+
+      <Image
+        src={bgAsset}
+        alt=""
+        className="absolute top-0 -left-48 -z-10 w-96 sm:-left-72 sm:w-120 lg:w-144"
+      />
     </section>
   )
 }
