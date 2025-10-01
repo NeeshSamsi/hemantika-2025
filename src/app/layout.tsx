@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${workSans.variable}`}>
+    <html lang="en" className={`${workSans.variable} overscroll-y-none`}>
       <body
         className={`bg-dark text-light font-body overflow-x-hidden antialiased`}
       >
