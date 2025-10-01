@@ -2,19 +2,21 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@plugin "@tailwindcss/typography";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {
   --font-body: var(--font-work-sans), sans-serif;
   --font-heading: "quiche-flare", serif;
 
-  --color-dark: #1B4955;
-  --color-light: #CCECF4;
-  --color-brand: #3CD3AD;
-  --color-accent-1: #C6C01B;
-  --color-accent-2: #DA6B1C;
-  --color-accent-3: #38CCF2;
-  --color-accent-4: #BA58E0;
+  --color-dark: #1b4955;
+  --color-light: #ccecf4;
+  --color-brand: #3cd3ad;
+  --color-accent-1: #c6c01b;
+  --color-accent-2: #da6b1c;
+  --color-accent-3: #38ccf2;
+  --color-accent-4: #ba58e0;
 }
 
 @theme inline {
