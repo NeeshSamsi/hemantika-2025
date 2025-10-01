@@ -39,7 +39,7 @@ const Hero: FC<HeroProps> = ({
         </p>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-6">
+      <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
         <Button asChild variant="primary">
           <PrismicNextLink field={ticket} />
         </Button>
