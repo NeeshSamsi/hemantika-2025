@@ -28,6 +28,27 @@
           "label": "Banner Text",
           "placeholder": ""
         }
+      },
+      "address": {
+        "type": "Text",
+        "config": {
+          "label": "Address",
+          "placeholder": ""
+        }
+      },
+      "instagram": {
+        "type": "Text",
+        "config": {
+          "label": "Instagram",
+          "placeholder": ""
+        }
+      },
+      "number": {
+        "type": "Text",
+        "config": {
+          "label": "Number",
+          "placeholder": ""
+        }
       }
     }
   }
