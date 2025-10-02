@@ -29,7 +29,7 @@ const FeaturedProfileWithDescription: FC<
     <section
       data-slice-type={slice_type}
       data-slice-variation={variation}
-      className="border-light bg-light/8 relative col-span-full mt-8 grid grid-cols-1 rounded border backdrop-blur-xl sm:mt-16 md:mt-32 xl:grid-cols-2"
+      className="border-light bg-light/8 relative col-span-full my-8 grid grid-cols-1 rounded border backdrop-blur-xl md:my-16 xl:grid-cols-2"
     >
       <div className="relative hidden xl:block">
         <PrismicNextImage

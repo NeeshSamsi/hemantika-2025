@@ -27,7 +27,7 @@ const Hero: FC<HeroProps> = ({
     <section
       data-slice-type={slice_type}
       data-slice-variation={variation}
-      className="relative col-span-full py-8"
+      className="relative col-span-full py-8 md:py-16"
     >
       <div className="font-heading mb-6 text-center font-bold lg:mb-10">
         <h1 className="mb-4 text-2xl lg:mb-8 lg:text-3xl">{eyebrow}</h1>
