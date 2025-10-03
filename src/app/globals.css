@@ -19,6 +19,10 @@
   --color-accent-4: #ba58e0;
 }
 
+.vertical {
+  writing-mode: sideways-lr;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
