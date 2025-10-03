@@ -3,6 +3,7 @@ import { asText, Content } from "@prismicio/client"
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react"
 import { PrismicNextImage } from "@prismicio/next"
 import Image from "next/image"
+import Heading2 from "@/components/Heading2"
 
 import bgAsset1 from "@/../public/bg-assets/timeline-1.png"
 import bgAsset2 from "@/../public/bg-assets/timeline-2.png"
@@ -30,9 +31,7 @@ const TimelineMilestones: FC<TimelineMilestonesProps> = ({
       data-slice-variation={variation}
       className="col-span-full my-8 grid grid-cols-subgrid space-y-8 md:my-16 md:space-y-12"
     >
-      <h2 className="font-heading col-span-full text-3xl font-bold lg:text-4xl xl:text-5xl">
-        {asText(heading)}
-      </h2>
+      <Heading2 className="col-span-full">{asText(heading)}</Heading2>
 
       <div className="col-span-full grid grid-cols-subgrid space-y-8 md:space-y-12">
         {timeline.map(({ year, image, description }, i) => (
