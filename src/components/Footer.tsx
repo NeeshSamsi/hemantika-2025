@@ -21,7 +21,7 @@ export default async function Footer() {
       </p>
       <div className="flex flex-col items-center gap-2 text-base font-medium sm:flex-row sm:gap-6 md:gap-8 md:text-lg">
         <a
-          href={`https://instagram.com/@${instagram}`}
+          href={`https://instagram.com/${instagram}`}
           className="group/insta flex items-center gap-2"
         >
           <Instagram className="size-4 md:size-5" />
