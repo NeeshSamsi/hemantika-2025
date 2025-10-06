@@ -25,7 +25,7 @@ export async function middleware(request: NextRequest) {
 
   const pathnameIsMissingLocale = await isPathnameMissingLocale(
     client,
-    pathname
+    pathname,
   )
 
   if (pathnameIsMissingLocale) {
@@ -36,6 +36,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Don’t change the URL of Next.js assets starting with _next or API routes
-  matcher: ["/((?!_next|api).*)"],
+  // Don't change the URL of Next.js assets starting with _next, API routes, or slice-simulator
+  matcher: ["/((?!_next|api|slice-simulator).*)"],
 }
