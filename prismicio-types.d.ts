@@ -423,12 +423,12 @@ export interface EventsSliceDefaultPrimary {
   /**
    * Section Heading field in *Events → Default → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: events.default.primary.heading
-   * - **Documentation**: https://prismic.io/docs/fields/text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  heading: prismic.KeyTextField
+  heading: prismic.RichTextField
 
   /**
    * Venue field in *Events → Default → Primary*

@@ -3,11 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"heading": {
-				"__TYPE__": "FieldContent",
-				"value": "orange",
-				"type": "Text"
-			},
 			"venue": {
 				"key": "0857caea-600e-4db8-8ef7-c56bb68e9c25",
 				"__TYPE__": "LinkContent",
@@ -58,8 +53,8 @@
 							[
 								"registrationLink",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "3297f2b8-4563-4556-aa01-fea3db268343",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "http://google.com",
@@ -68,6 +63,17 @@
 								}
 							]
 						]
+					}
+				]
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Today"
+						}
 					}
 				]
 			}
