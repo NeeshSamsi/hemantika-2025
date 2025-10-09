@@ -90,7 +90,7 @@ const EventDetailsHighlight: FC<EventDetailsHighlightProps> = ({
             </div>
           </div>
 
-          <Button asChild variant="secondary">
+          <Button asChild variant="secondary" className="w-full sm:w-fit">
             <PrismicNextLink field={cta_button}>
               <span>{cta_button.text}</span>
               <ArrowUpRight className="size-6" />
