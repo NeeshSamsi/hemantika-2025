@@ -54,7 +54,7 @@ const TimelineMilestones: FC<TimelineMilestonesProps> = ({
                 />
               </div>
             </div>
-            <div className="prose-base text-light prose-p:leading-normal">
+            <div className="prose-sm sm:prose-base text-light prose-p:leading-normal">
               <PrismicRichText field={description} />
             </div>
 

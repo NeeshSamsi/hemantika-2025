@@ -48,7 +48,7 @@ const FeaturedProfileWithDescription: FC<
           {asText(title)}
         </h2>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-0 xl:block">
-          <div className="prose-base text-light prose-p:leading-normal max-w-none">
+          <div className="prose-sm sm:prose-base text-light prose-p:leading-normal max-w-none">
             <PrismicRichText field={description} />
           </div>
           <div className="relative block xl:hidden">
