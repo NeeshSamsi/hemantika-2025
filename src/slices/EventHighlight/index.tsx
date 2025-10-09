@@ -6,7 +6,10 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next"
 import { formatDateWithOrdinal } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ArrowUpRight } from "lucide-react"
-import Link from "next/link"
+import Image from "next/image"
+
+import bgAsset1 from "@/../public/bg-assets/highlight-1.png"
+import bgAsset2 from "@/../public/bg-assets/highlight-2.png"
 
 /**
  * Props for `EventDetailsHighlight`.
@@ -38,7 +41,7 @@ const EventDetailsHighlight: FC<EventDetailsHighlightProps> = ({
     <section
       data-slice-type={slice_type}
       data-slice-variation={variation}
-      className="col-span-full my-8 grid grid-cols-subgrid space-y-8 md:my-16 md:space-y-12"
+      className="relative col-span-full my-8 grid grid-cols-subgrid space-y-8 md:my-16 md:space-y-12"
     >
       <Heading2 className="col-span-full">{asText(heading)}</Heading2>
 
@@ -93,11 +96,22 @@ const EventDetailsHighlight: FC<EventDetailsHighlightProps> = ({
           <Button asChild variant="secondary" className="w-full sm:w-fit">
             <PrismicNextLink field={cta_button}>
               <span>{cta_button.text}</span>
-              <ArrowUpRight className="size-6" />
+              <ArrowUpRight className="size-5 lg:size-6" />
             </PrismicNextLink>
           </Button>
         </div>
       </div>
+
+      <Image
+        src={bgAsset1}
+        alt=""
+        className="absolute -top-28 -left-56 -z-10 w-200 sm:-top-40 sm:-left-88 md:-top-64 md:-left-112"
+      />
+      <Image
+        src={bgAsset2}
+        alt=""
+        className="absolute -right-40 -bottom-28 -z-10 w-96 sm:-right-48 sm:-bottom-40 md:-right-96 md:-bottom-88 md:w-160"
+      />
     </section>
   )
 }
