@@ -91,10 +91,10 @@ const EventDetailsHighlight: FC<EventDetailsHighlightProps> = ({
           </div>
 
           <Button asChild variant="secondary">
-            <Link href="https">
-              <span>Get tickets</span>
+            <PrismicNextLink field={cta_button}>
+              <span>{cta_button.text}</span>
               <ArrowUpRight className="size-6" />
-            </Link>
+            </PrismicNextLink>
           </Button>
         </div>
       </div>
